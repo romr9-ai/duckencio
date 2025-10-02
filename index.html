@@ -56,46 +56,59 @@
             height: 3px;
             background-color: #8a3ffc;
         }
-        .card {
-            background-color: #2a1a47;
-            border: 1px solid #4a3a67;
-        }
         .header-scrolled {
             background-color: rgba(26, 16, 44, 0.8);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
         
-        /* Estilos para la nueva sección de experiencia */
+        /* Estilos para la sección de experiencia v3 */
         .artist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 1.5rem;
         }
-        .artist-logo-card {
-            background-color: rgba(42, 26, 71, 0.5);
-            border: 1px solid #4a3a67;
+        .artist-card {
+            position: relative;
+            min-height: 240px;
             border-radius: 0.75rem;
-            padding: 1.5rem 1rem;
-            text-align: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            border: 1px solid #4a3a67;
+        }
+        .artist-card:hover {
+             transform: scale(1.05);
+             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .artist-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(15, 5, 30, 0.95) 20%, rgba(15, 5, 30, 0.1) 80%);
+            z-index: 1;
             transition: all 0.3s ease;
         }
-        .artist-logo-card:hover {
-            transform: translateY(-5px);
-            background-color: #2a1a47;
-            border-color: #8a3ffc;
+        .artist-card:hover::before {
+            background: linear-gradient(to top, rgba(15, 5, 30, 0.8) 10%, rgba(15, 5, 30, 0) 70%);
         }
-        .artist-logo-placeholder {
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #a0a0a0;
-            margin-bottom: 0.75rem;
+        .artist-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        .artist-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
         }
         .artist-role {
-            font-size: 0.8rem;
+            font-size: 0.875rem;
             font-weight: 600;
             color: #8a3ffc;
             text-transform: uppercase;
@@ -143,7 +156,7 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#work" class="px-8 py-3 text-lg text-white font-bold rounded-lg btn btn-primary flex items-center justify-center gap-2">
                         Ver Mi Trabajo
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                     </a>
                     <a href="#contact" class="px-8 py-3 text-lg font-bold rounded-lg border-2 btn btn-secondary">Contacto</a>
                 </div>
@@ -187,7 +200,7 @@
             </div>
         </section>
 
-        <!-- Experience Section v2 -->
+        <!-- Experience Section v3 -->
         <section id="experience" class="py-20 md:py-32">
             <div class="container mx-auto px-6 fade-in-up">
                 <div class="text-center mb-16">
@@ -201,27 +214,27 @@
                         Créditos como Músico
                     </h3>
                     <div class="artist-grid">
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Fármacos ]</div><span class="artist-role">Baterista</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ S. Ahuevo ]</div><span class="artist-role">Baterista</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ David J ]</div><span class="artist-role">Baterista</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Roy Z ]</div><span class="artist-role">Baterista</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Camiseta 22 ]</div><span class="artist-role">Baterista</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Black Oil ]</div><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1588724345283-71dc357d8486?q=80&w=1974&auto=format&fit=crop');"><h4 class="artist-name">Fármacos</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1516280440614-376395b922e7?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Simpson Ahuevo</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">David J (Bauhaus)</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1628921868433-f1a58a74e4a7?q=80&w=1964&auto=format&fit=crop');"><h4 class="artist-name">Roy Z (Judas Priest)</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Camiseta 22</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1594125674939-57359533a23a?q=80&w=1974&auto=format&fit=crop');"><h4 class="artist-name">Black Oil</h4><span class="artist-role">Baterista</span></div>
                     </div>
                 </div>
 
                 <div class="mt-20">
                     <h3 class="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a3ffc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V2H8l-2 2v16l2 2h8l2-2V12Z"/><path d="M18.5 6.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M8 12h8"/></svg>
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" 24" fill="none" stroke="#8a3ffc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V2H8l-2 2v16l2 2h8l2-2V12Z"/><path d="M18.5 6.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M8 12h8"/></svg>
                         Créditos como Técnico de Giras
                     </h3>
                     <div class="artist-grid">
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ A. Guzmán ]</div><span class="artist-role">Drum Tech</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Little Jesus ]</div><span class="artist-role">Drum Tech</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Ruzzi ]</div><span class="artist-role">Stage Manager</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Polyphia ]</div><span class="artist-role">Stage Hand</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ Anthrax ]</div><span class="artist-role">Stage Hand</span></div>
-                        <div class="artist-logo-card"><div class="artist-logo-placeholder">[ L. Menores ]</div><span class="artist-role">Ing. Monitores</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop');"><h4 class="artist-name">Alejandra Guzmán</h4><span class="artist-role">Drum Tech</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1549402583-05461284d782?q=80&w=1974&auto=format&fit=crop');"><h4 class="artist-name">Little Jesus</h4><span class="artist-role">Drum Tech</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Ruzzi</h4><span class="artist-role">Stage Manager</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1634935439268-9d4a5b6e22e6?q=80&w=1932&auto=format&fit=crop');"><h4 class="artist-name">Polyphia</h4><span class="artist-role">Stage Hand</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Anthrax</h4><span class="artist-role">Stage Hand</span></div>
+                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Las Ligas Menores</h4><span class="artist-role">Ing. Monitores</span></div>
                     </div>
                 </div>
             </div>
@@ -234,21 +247,21 @@
                     <h2 class="section-title text-3xl md:text-4xl mb-4">GALERÍA</h2>
                     <p class="text-gray-400 max-w-2xl mx-auto">Momentos en el escenario y en el estudio.</p>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div class="group relative overflow-hidden rounded-lg md:col-span-1 md:row-span-2">
-                        <img src="./assets/3.jpeg" alt="Francisco en el estudio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg md:col-span-2">
+                <div class="grid grid-cols-2 lg:grid-cols-4 auto-rows-[250px] gap-4">
+                    <div class="group relative overflow-hidden rounded-lg col-span-2 lg:col-span-2 lg:row-span-2">
                         <img src="./assets/2.jpeg" alt="Francisco tocando en un gran escenario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img src="./assets/3.jpeg" alt="Francisco en el estudio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg">
                         <img src="./assets/4.jpeg" alt="Francisco en vivo en un festival" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="./assets/5.jpeg" alt="Retrato de Francisco en la batería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
-                    </div>
-                     <div class="group relative overflow-hidden rounded-lg col-span-2 md:col-span-3">
+                    <div class="group relative overflow-hidden rounded-lg col-span-2 lg:col-span-1">
                          <img src="./assets/1.jpeg" alt="Francisco en estudio con luz azul" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg col-span-2 lg:col-span-1">
+                        <img src="./assets/5.jpeg" alt="Retrato de Francisco en la batería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                 </div>
             </div>
