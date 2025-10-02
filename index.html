@@ -15,8 +15,8 @@
             color: #e0e0e0;
         }
         .hero-bg {
-            /* Ruta corregida para la imagen de fondo */
-            background-image: linear-gradient(rgba(26, 16, 44, 0.8), rgba(26, 16, 44, 1)), url('assets/2.jpeg');
+            /* Ruta corregida para la imagen de fondo con ./ */
+            background-image: linear-gradient(rgba(26, 16, 44, 0.8), rgba(26, 16, 44, 1)), url('./assets/2.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -102,9 +102,9 @@
                 
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                     <div class="lg:col-span-3 rounded-lg overflow-hidden shadow-2xl">
-                        <!-- Ruta corregida para la imagen poster y el video -->
-                        <video controls poster="assets/3.jpeg" class="w-full h-full object-cover aspect-video bg-black">
-                            <source src="assets/1.mp4" type="video/mp4"> 
+                        <!-- Ruta corregida para la imagen poster y el video con ./ -->
+                        <video controls poster="./assets/3.jpeg" class="w-full h-full object-cover aspect-video bg-black">
+                            <source src="./assets/1.mp4" type="video/mp4"> 
                             Tu navegador no soporta el tag de video.
                         </video>
                         <p class="text-center text-sm text-gray-400 mt-2">Showreel 2025</p>
@@ -171,18 +171,18 @@
                     <p class="text-gray-400 max-w-2xl mx-auto">Momentos en el escenario y en el estudio.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <!-- Rutas corregidas para la galería -->
+                    <!-- Rutas corregidas para la galería con ./ -->
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img src="assets/1.jpeg" alt="Francisco en estudio con luz azul" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/1.jpeg" alt="Francisco en estudio con luz azul" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg col-span-1 md:col-span-2">
-                         <img src="assets/3.jpeg" alt="Francisco grabando en el estudio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                         <img src="./assets/3.jpeg" alt="Francisco grabando en el estudio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                      <div class="group relative overflow-hidden rounded-lg">
-                        <img src="assets/4.jpeg" alt="Francisco tocando en un festival" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/4.jpeg" alt="Francisco tocando en un festival" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg col-span-2 md:col-span-1">
-                        <img src="assets/5.jpeg" alt="Retrato de Francisco en la batería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/5.jpeg" alt="Retrato de Francisco en la batería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                 </div>
             </div>
@@ -201,7 +201,7 @@
                 </div>
                 <div class="flex justify-center gap-6 mt-10">
                     <a href="https://www.instagram.com/duck.drummer/" target="_blank" class="text-gray-400 hover:text-white transition">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zm-1.002 11.445a4.445 4.445 0 108.89 0 4.445 4.445 0 00-8.89 0zm8.093-6.552a1.323 1.323 0 11-2.645 0 1.323 1.323 0 012.645 0z" clip-rule="evenodd" /></svg>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zm-1.002 11.445a4.445 4.445 0 108.89 0 4.445 4.445 0 00-8.89 0zm8.093-6.552a1.323 1.323 0 11-2.645 0 1.323 1.323 0 012.645 0z" clip-rule="evenodd" /></svg>
                     </a>
                     <a href="https://www.youtube.com/@DuckDrummer" target="_blank" class="text-gray-400 hover:text-white transition">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 01-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 01-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 011.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
@@ -224,4 +224,3 @@
     </script>
 </body>
 </html>
-
