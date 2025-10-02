@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Aburto - Baterista de Sesión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a102c; /* Morado muy oscuro */
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            /* REEMPLAZAR: Cambia esta URL por la de la imagen principal que elijas */
+            background-image: linear-gradient(rgba(26, 16, 44, 0.8), rgba(26, 16, 44, 1)), url('https://images.unsplash.com/photo-1598488035139-BFFb2d0735b3?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn-primary {
+            background-color: #8a3ffc; /* Morado brillante */
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #a066fd;
+        }
+        .btn-secondary {
+            border-color: #8a3ffc;
+            color: #8a3ffc;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #8a3ffc;
+            color: #fff;
+        }
+        .section-title {
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .card {
+            background-color: #2a1a47;
+            border: 1px solid #4a3a67;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md bg-[#1a102c]/50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider">F.A.</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition">Acerca de</a>
+                <a href="#work" class="text-gray-300 hover:text-white transition">Trabajo</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition">Experiencia</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Galería</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">Contacto</a>
+            </nav>
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 text-white font-semibold rounded-lg btn-primary">Contratar</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center text-center hero-bg">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-4 tracking-tighter">
+                    FRANCISCO ABURTO
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-semibold mb-8">
+                    BATERISTA DE SESIÓN Y GIRAS
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#work" class="px-8 py-3 text-lg text-white font-bold rounded-lg btn-primary">Ver Mi Trabajo</a>
+                    <a href="#contact" class="px-8 py-3 text-lg font-bold rounded-lg border-2 btn-secondary">Contacto</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="section-title text-3xl md:text-4xl mb-8">ACERCA DE MÍ</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Músico mexicano nacido en Mexicali y egresado de la Licenciatura de Música Contemporánea. Con una sólida trayectoria en giras nacionales e internacionales, me especializo en ofrecer un performance rítmico preciso y versátil para una gran variedad de estilos musicales, aportando profesionalismo y energía a cada proyecto.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work / Showreel Section -->
+        <section id="work" class="py-20 md:py-32 bg-[#2a1a47]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-3xl md:text-4xl mb-4">MI TRABAJO</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Videos de mi trabajo en vivo y en el estudio, y una playlist con grabaciones en las que he participado.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+                    <div class="lg:col-span-3 rounded-lg overflow-hidden shadow-2xl">
+                        <!-- IMPORTANTE: Reemplaza el 'src' con la URL del video del showreel una vez que lo subas a YouTube o Vimeo -->
+                        <!-- También puedes subir el archivo .mp4 al mismo hosting que la web y poner la ruta local -->
+                        <video controls poster="https://placehold.co/1920x1080/1a102c/e0e0e0?text=Showreel+Video" class="w-full h-full object-cover aspect-video bg-black">
+                            <source src="" type="video/mp4"> <!-- Poner la URL del video aqui -->
+                            Tu navegador no soporta el tag de video.
+                        </video>
+                        <p class="text-center text-sm text-gray-400 mt-2">Showreel 2025</p>
+                    </div>
+
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-4">Discografía de Sesión</h3>
+                        <div class="rounded-lg overflow-hidden">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0WCjzEbNqKTaWOZrAY7fP5?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-3xl md:text-4xl mb-4">EXPERIENCIA PROFESIONAL</h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto">Mi carrera se divide en mi trabajo principal como músico y mi valiosa experiencia en roles técnicos, lo que me da una visión completa del escenario.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- Baterista -->
+                    <div>
+                        <h3 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a3ffc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2 0-4.5.7-4.5 3.5v0c0 1.7 1.3 3 3 3h3c1.7 0 3-1.3 3-3v0c0-2.8-2.5-3.5-4.5-3.5Z"/><path d="m14 13.5 4-3"/><path d="m2 13.5 4-3"/><path d="M12 6V3"/><path d="M18 6.5V3"/><path d="M6 6.5V3"/></svg>
+                            Créditos como Baterista
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="card rounded-lg p-4">Fármacos</li>
+                            <li class="card rounded-lg p-4">Simpson Ahuevo</li>
+                            <li class="card rounded-lg p-4">David J (Bauhaus/Love and Rockets)</li>
+                            <li class="card rounded-lg p-4">Roy Z (Bruce Dickinson/Judas Priest)</li>
+                            <li class="card rounded-lg p-4">Camiseta 22 (Ex Guachupé)</li>
+                            <li class="card rounded-lg p-4">Músico invitado con Black Oil (Hell & Heaven 2023)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Staff -->
+                    <div>
+                        <h3 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a3ffc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V2H8l-2 2v16l2 2h8l2-2V12Z"/><path d="M18.5 6.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M8 12h8"/></svg>
+                            Soporte Técnico en Giras
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="card rounded-lg p-4"><strong class="text-[#8a3ffc]">Drum Tech:</strong> Alejandra Guzmán, Little Jesus, Serbia, Resorte, Salón Victoria, Alpha Union.</li>
+                            <li class="card rounded-lg p-4"><strong class="text-[#8a3ffc]">Stage Manager:</strong> Ruzzi, The Real Antonios.</li>
+                            <li class="card rounded-lg p-4"><strong class="text-[#8a3ffc]">Ing. de Sala/Monitores:</strong> Las Ligas Menores.</li>
+                            <li class="card rounded-lg p-4"><strong class="text-[#8a3ffc]">Stage Hand:</strong> Polyphia, Anthrax.</li>
+                            <li class="card rounded-lg p-4"><strong class="text-[#8a3ffc]">Backliner:</strong> Festival City, Tierra Sonora.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 md:py-32 bg-[#2a1a47]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-3xl md:text-4xl mb-4">GALERÍA</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Momentos en el escenario y en el estudio.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- REEMPLAZAR: Cambia estas URLs por las de tus imágenes. Las dimensiones son solo sugerencias. -->
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/600x800/8a3ffc/fff?text=En+Vivo+1" alt="Francisco tocando en vivo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg col-span-1 md:col-span-2">
+                         <img src="https://placehold.co/1200x800/8a3ffc/fff?text=Vista+desde+la+bateria" alt="Vista desde la bateria en un festival" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                     <div class="group relative overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/600x800/8a3ffc/fff?text=En+Estudio+1" alt="Francisco en el estudio de grabación" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg col-span-2 md:col-span-1">
+                        <img src="https://placehold.co/600x800/8a3ffc/fff?text=Retrato" alt="Retrato de Francisco" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/600x400/8a3ffc/fff?text=En+Estudio+2" alt="Francisco en otra sesión de estudio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/600x400/8a3ffc/fff?text=En+Vivo+2" alt="Francisco tocando en un festival" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-3xl md:text-4xl mb-4">CONTACTO</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-10">¿Listo para colaborar o necesitas un baterista para tu próximo proyecto? Contáctame.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-lg">
+                    <a href="mailto:aaron.drums97@gmail.com" class="hover:text-[#8a3ffc] transition">aaron.drums97@gmail.com</a>
+                    <span class="hidden md:block text-gray-500">|</span>
+                    <a href="tel:+526869457761" class="hover:text-[#8a3ffc] transition">+52 686 945 77 61</a>
+                </div>
+                <div class="flex justify-center gap-6 mt-10">
+                    <a href="https://www.instagram.com/duck.drummer/" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zm-1.002 11.445a4.445 4.445 0 108.89 0 4.445 4.445 0 00-8.89 0zm8.093-6.552a1.323 1.323 0 11-2.645 0 1.323 1.323 0 012.645 0z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@DuckDrummer" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 01-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 01-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 011.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; <span id="year"></span> Francisco Aburto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
