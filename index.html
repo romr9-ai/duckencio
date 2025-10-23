@@ -65,8 +65,21 @@
         /* Estilos para la sección de experiencia v3 */
         .artist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(6, minmax(160px, 1fr));
+            gap: 1.25rem;
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+            scrollbar-width: thin;
+        }
+        .artist-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+        .artist-grid::-webkit-scrollbar-thumb {
+            background-color: rgba(138, 63, 252, 0.4);
+            border-radius: 9999px;
+        }
+        .artist-grid::-webkit-scrollbar-track {
+            background-color: rgba(74, 58, 103, 0.4);
         }
         .artist-card {
             position: relative;
@@ -214,27 +227,27 @@
                         Créditos como Músico
                     </h3>
                     <div class="artist-grid">
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1588724345283-71dc357d8486?q=80&w=1974&auto=format&fit=crop');"><h4 class="artist-name">Fármacos</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1516280440614-376395b922e7?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Simpson Ahuevo</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">David J (Bauhaus)</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1628921868433-f1a58a74e4a7?q=80&w=1964&auto=format&fit=crop');"><h4 class="artist-name">Roy Z (Judas Priest)</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Camiseta 22</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1594125674939-57359533a23a?q=80&w=1974&auto=format&fit=crop');"><h4 class="artist-name">Black Oil</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://img.youtube.com/vi/S2HKhXrhQ9w/hqdefault.jpg');"><h4 class="artist-name">Fármacos</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://img.youtube.com/vi/8iTrfK-DEUY/hqdefault.jpg');"><h4 class="artist-name">Simpson Ahuevo</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b7/David_J_and_The_Gentleman_Thieves_%28David%29.jpg');"><h4 class="artist-name">David J (Bauhaus)</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Roy-Z-Wiki-Pic-web.jpg/960px-Roy-Z-Wiki-Pic-web.jpg');"><h4 class="artist-name">Roy Z (Judas Priest)</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://img.youtube.com/vi/-MEXIPgIIuw/hqdefault.jpg');"><h4 class="artist-name">Camiseta 22</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/IMG_0070bbmail.JPG');"><h4 class="artist-name">Black Oil</h4><span class="artist-role">Baterista</span></div>
                     </div>
                 </div>
 
                 <div class="mt-20">
                     <h3 class="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" 24" fill="none" stroke="#8a3ffc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V2H8l-2 2v16l2 2h8l2-2V12Z"/><path d="M18.5 6.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M8 12h8"/></svg>
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a3ffc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V2H8l-2 2v16l2 2h8l2-2V12Z"/><path d="M18.5 6.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M8 12h8"/></svg>
                         Créditos como Técnico de Giras
                     </h3>
                     <div class="artist-grid">
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop');"><h4 class="artist-name">Alejandra Guzmán</h4><span class="artist-role">Drum Tech</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1549402583-05461284d782?q=80&w=1974&auto=format&fit=crop');"><h4 class="artist-name">Little Jesus</h4><span class="artist-role">Drum Tech</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Ruzzi</h4><span class="artist-role">Stage Manager</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1634935439268-9d4a5b6e22e6?q=80&w=1932&auto=format&fit=crop');"><h4 class="artist-name">Polyphia</h4><span class="artist-role">Stage Hand</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Anthrax</h4><span class="artist-role">Stage Hand</span></div>
-                        <div class="artist-card" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop');"><h4 class="artist-name">Las Ligas Menores</h4><span class="artist-role">Ing. Monitores</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alejandra_Guzm%C3%A1n.jpg/960px-Alejandra_Guzm%C3%A1n.jpg');"><h4 class="artist-name">Alejandra Guzmán</h4><span class="artist-role">Drum Tech</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/MX_AM_LITTLE_JESUS_ORQUESTA_%2838532535456%29.jpg/1200px-MX_AM_LITTLE_JESUS_ORQUESTA_%2838532535456%29.jpg');"><h4 class="artist-name">Little Jesus</h4><span class="artist-role">Drum Tech</span></div>
+                        <div class="artist-card" style="background-image: url('https://img.youtube.com/vi/mlBjKErcu_o/hqdefault.jpg');"><h4 class="artist-name">Ruzzi</h4><span class="artist-role">Stage Manager</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Polyphia_-_Manchester%2C_UK_-_6_February_2019.jpg/1200px-Polyphia_-_Manchester%2C_UK_-_6_February_2019.jpg');"><h4 class="artist-name">Polyphia</h4><span class="artist-role">Stage Hand</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Anthrax_Rockavaria_2016_%2812_von_12%29.jpg/1200px-Anthrax_Rockavaria_2016_%2812_von_12%29.jpg');"><h4 class="artist-name">Anthrax</h4><span class="artist-role">Stage Hand</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Las_Ligas_Menores_en_el_Foro_Indie_Rocks%2C_Ciudad_de_M%C3%A9xico.tif/lossy-page1-1200px-Las_Ligas_Menores_en_el_Foro_Indie_Rocks%2C_Ciudad_de_M%C3%A9xico.tif.jpg');"><h4 class="artist-name">Las Ligas Menores</h4><span class="artist-role">Ing. Monitores</span></div>
                     </div>
                 </div>
             </div>
