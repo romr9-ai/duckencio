@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="./assets/i18n.js" defer></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -127,6 +128,23 @@
             color: #8a3ffc;
             text-transform: uppercase;
         }
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem;
+            border: 1px solid #4a3a67;
+            border-radius: 0.5rem;
+            background-color: rgba(33, 22, 57, 0.8);
+        }
+        .lang-switch button {
+            border-radius: 0.375rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 1;
+            transition: all 0.2s ease;
+        }
 
         /* Animaciones */
         .fade-in-up {
@@ -149,16 +167,20 @@
                 <img src="./assets/logo.png" alt="Francisco Aburto" class="h-12 md:h-14 w-auto">
             </a>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-300 hover:text-white transition">Acerca de</a>
-                <a href="#work" class="text-gray-300 hover:text-white transition">Trabajo</a>
-                <a href="#experience" class="text-gray-300 hover:text-white transition">Experiencia</a>
-                <a href="#gallery" class="text-gray-300 hover:text-white transition">Galería</a>
-                <a href="#contact" class="text-gray-300 hover:text-white transition">Contacto</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition" data-i18n="nav.about">Acerca de</a>
+                <a href="#work" class="text-gray-300 hover:text-white transition" data-i18n="nav.work">Trabajo</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition" data-i18n="nav.experience">Experiencia</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition" data-i18n="nav.gallery">Galería</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition" data-i18n="nav.contact">Contacto</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="#contact" class="hidden md:inline-block px-5 py-2 text-white font-semibold rounded-lg btn btn-primary">Hablemos</a>
-                <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-white hover:text-[#8a3ffc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8a3ffc] focus:ring-offset-[#1a102c] transition" aria-expanded="false" aria-controls="mobile-menu">
-                    <span class="sr-only">Abrir menu de navegacion</span>
+                <div class="hidden md:inline-flex lang-switch" aria-label="Selector de idioma">
+                    <button type="button" data-lang-option="es" aria-pressed="true" class="bg-[#8a3ffc] text-white hover:text-white">ES</button>
+                    <button type="button" data-lang-option="en" aria-pressed="false" class="text-gray-300 hover:text-white">EN</button>
+                </div>
+                <a href="#contact" class="hidden md:inline-block px-5 py-2 text-white font-semibold rounded-lg btn btn-primary" data-i18n="nav.cta">Hablemos</a>
+                <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-white hover:text-[#8a3ffc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8a3ffc] focus:ring-offset-[#1a102c] transition" aria-expanded="false" aria-controls="mobile-menu" data-i18n-label="nav.menuToggle" aria-label="Abrir menu de navegacion">
+                    <span class="sr-only" data-i18n="nav.menuToggle">Abrir menu de navegacion</span>
                     <svg id="mobile-menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <path d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -170,12 +192,16 @@
         </div>
         <div id="mobile-menu" class="md:hidden hidden bg-[#211639] border-t border-[#4a3a67] px-6 pb-6 shadow-lg">
             <nav class="flex flex-col space-y-4 text-base">
-                <a href="#about" class="text-gray-300 hover:text-white transition">Acerca de</a>
-                <a href="#work" class="text-gray-300 hover:text-white transition">Trabajo</a>
-                <a href="#experience" class="text-gray-300 hover:text-white transition">Experiencia</a>
-                <a href="#gallery" class="text-gray-300 hover:text-white transition">Galería</a>
-                <a href="#contact" class="text-gray-300 hover:text-white transition">Contacto</a>
-                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2 text-white font-semibold rounded-lg btn btn-primary">Hablemos</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition" data-i18n="nav.about">Acerca de</a>
+                <a href="#work" class="text-gray-300 hover:text-white transition" data-i18n="nav.work">Trabajo</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition" data-i18n="nav.experience">Experiencia</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition" data-i18n="nav.gallery">Galería</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition" data-i18n="nav.contact">Contacto</a>
+                <div class="lang-switch w-fit" aria-label="Selector de idioma">
+                    <button type="button" data-lang-option="es" aria-pressed="true" class="bg-[#8a3ffc] text-white hover:text-white">ES</button>
+                    <button type="button" data-lang-option="en" aria-pressed="false" class="text-gray-300 hover:text-white">EN</button>
+                </div>
+                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2 text-white font-semibold rounded-lg btn btn-primary" data-i18n="nav.cta">Hablemos</a>
             </nav>
         </div>
     </header>
@@ -184,18 +210,18 @@
         <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center text-center hero-bg">
             <div class="container mx-auto px-6">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-4 tracking-tighter">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-4 tracking-tighter" data-i18n="hero.title">
                     FRANCISCO ABURTO
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-300 font-semibold mb-8">
+                <p class="text-xl md:text-2xl text-gray-300 font-semibold mb-8" data-i18n="hero.subtitle">
                     BATERISTA DE SESIÓN Y GIRAS
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#work" class="px-8 py-3 text-lg text-white font-bold rounded-lg btn btn-primary flex items-center justify-center gap-2">
-                        Escúchame
+                        <span data-i18n="hero.primaryCta">Escúchame</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                     </a>
-                    <a href="#contact" class="px-8 py-3 text-lg font-bold rounded-lg border-2 btn btn-secondary">Contacto</a>
+                    <a href="#contact" class="px-8 py-3 text-lg font-bold rounded-lg border-2 btn btn-secondary" data-i18n="hero.secondaryCta">Contacto</a>
                 </div>
             </div>
         </section>
@@ -203,8 +229,8 @@
         <!-- About Section -->
         <section id="about" class="py-20 md:py-32">
             <div class="container mx-auto px-6 text-center max-w-4xl fade-in-up">
-                <h2 class="section-title text-3xl md:text-4xl mb-12">ACERCA DE MÍ</h2>
-                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                <h2 class="section-title text-3xl md:text-4xl mb-12" data-i18n="about.title">ACERCA DE MÍ</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed" data-i18n="about.body">
                     Nací en Mexicali, estudié música contemporánea y llevo años viviendo en la carretera y en el estudio. Toco rock, pop, indie y lo que el proyecto necesite — lo que no cambia es que siempre voy a estar in the pocket. Si buscas a alguien que se adapte rápido, lea la sala y haga que la banda suene bien, hablemos.
                 </p>
             </div>
@@ -214,21 +240,21 @@
         <section id="work" class="py-20 md:py-32 bg-[#2a1a47]">
             <div class="container mx-auto px-6 fade-in-up">
                 <div class="text-center mb-12">
-                    <h2 class="section-title text-3xl md:text-4xl mb-4">MI TRABAJO</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto">Aquí puedes ver cómo trabajo en vivo y escuchar algunos de los proyectos en los que he grabado.</p>
+                    <h2 class="section-title text-3xl md:text-4xl mb-4" data-i18n="work.title">MI TRABAJO</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="work.body">Aquí puedes ver cómo trabajo en vivo y escuchar algunos de los proyectos en los que he grabado.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                     <div class="lg:col-span-3 rounded-lg overflow-hidden shadow-2xl">
                         <video controls poster="./assets/3.jpeg" class="w-full h-full object-cover aspect-video bg-black rounded-lg">
                             <source src="./assets/11.mp4" type="video/mp4"> 
-                            Tu navegador no soporta el tag de video.
+                            <span data-i18n="work.videoFallback">Tu navegador no soporta el tag de video.</span>
                         </video>
-                        <p class="text-center text-sm text-gray-400 mt-2">Showreel 2025</p>
+                        <p class="text-center text-sm text-gray-400 mt-2" data-i18n="work.showreel">Showreel 2025</p>
                     </div>
 
                     <div class="lg:col-span-2">
-                        <h3 class="text-2xl font-bold text-white mb-4">Lo que he grabado</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="work.recordingsTitle">Lo que he grabado</h3>
                         <div class="rounded-lg overflow-hidden">
                             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0WCjzEbNqKTaWOZrAY7fP5?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
@@ -241,35 +267,35 @@
         <section id="experience" class="py-20 md:py-32">
             <div class="container mx-auto px-6 fade-in-up">
                 <div class="text-center mb-16">
-                    <h2 class="section-title text-3xl md:text-4xl mb-4">EXPERIENCIA PROFESIONAL</h2>
-                    <p class="text-gray-400 max-w-3xl mx-auto">Desde salas chicas en Mexicali hasta escenarios grandes en gira — he tocado con quién hay que tocar y he cargado los tambos de quién hay que aprender.</p>
+                    <h2 class="section-title text-3xl md:text-4xl mb-4" data-i18n="experience.title">EXPERIENCIA PROFESIONAL</h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto" data-i18n="experience.body">Desde salas chicas en Mexicali hasta escenarios grandes en gira — he tocado con quién hay que tocar y he cargado los tambos de quién hay que aprender.</p>
                 </div>
 
                 <div>
-                    <h3 class="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
+                    <h3 class="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4" data-i18n="experience.musicianTitle">
                         Como músico
                     </h3>
                     <div class="artist-grid">
-                        <div class="artist-card" style="background-image: url('./assets/farmacos.jpg');"><h4 class="artist-name">Fármacos</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/sah.jpg');"><h4 class="artist-name">Simpson Ahuevo</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/davidj.webp');"><h4 class="artist-name">David J (Bauhaus)</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/royz.jpg');"><h4 class="artist-name">Roy Z (Judas Priest)</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/cam22.jpg');"><h4 class="artist-name">Camiseta 22</h4><span class="artist-role">Baterista</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/blackoil.jpg');"><h4 class="artist-name">Black Oil</h4><span class="artist-role">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/farmacos.jpg');"><h4 class="artist-name">Fármacos</h4><span class="artist-role" data-i18n="roles.drummer">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/sah.jpg');"><h4 class="artist-name">Simpson Ahuevo</h4><span class="artist-role" data-i18n="roles.drummer">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/davidj.webp');"><h4 class="artist-name">David J (Bauhaus)</h4><span class="artist-role" data-i18n="roles.drummer">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/royz.jpg');"><h4 class="artist-name">Roy Z (Judas Priest)</h4><span class="artist-role" data-i18n="roles.drummer">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/cam22.jpg');"><h4 class="artist-name">Camiseta 22</h4><span class="artist-role" data-i18n="roles.drummer">Baterista</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/blackoil.jpg');"><h4 class="artist-name">Black Oil</h4><span class="artist-role" data-i18n="roles.drummer">Baterista</span></div>
                     </div>
                 </div>
 
                 <div class="mt-20">
-                    <h3 class="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
+                    <h3 class="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4" data-i18n="experience.techTitle">
                         Como técnico de giras
                     </h3>
                     <div class="artist-grid">
-                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alejandra_Guzm%C3%A1n.jpg/960px-Alejandra_Guzm%C3%A1n.jpg');"><h4 class="artist-name">Alejandra Guzmán</h4><span class="artist-role">Drum Tech</span></div>
-                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/MX_AM_LITTLE_JESUS_ORQUESTA_%2838532535456%29.jpg/960px-MX_AM_LITTLE_JESUS_ORQUESTA_%2838532535456%29.jpg');"><h4 class="artist-name">Little Jesus</h4><span class="artist-role">Drum Tech</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/ruzzi.jpg');"><h4 class="artist-name">Ruzzi</h4><span class="artist-role">Stage Manager</span></div>
-                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Polyphia_-_Manchester%2C_UK_-_6_February_2019.jpg/960px-Polyphia_-_Manchester%2C_UK_-_6_February_2019.jpg');"><h4 class="artist-name">Polyphia</h4><span class="artist-role">Stage Hand</span></div>
-                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Anthrax_Rockavaria_2016_%2812_von_12%29.jpg/960px-Anthrax_Rockavaria_2016_%2812_von_12%29.jpg');"><h4 class="artist-name">Anthrax</h4><span class="artist-role">Stage Hand</span></div>
-                        <div class="artist-card" style="background-image: url('./assets/ligasmenor.jpg');"><h4 class="artist-name">Las Ligas Menores</h4><span class="artist-role">Ing. Monitores</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alejandra_Guzm%C3%A1n.jpg/960px-Alejandra_Guzm%C3%A1n.jpg');"><h4 class="artist-name">Alejandra Guzmán</h4><span class="artist-role" data-i18n="roles.drumTech">Drum Tech</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/MX_AM_LITTLE_JESUS_ORQUESTA_%2838532535456%29.jpg/960px-MX_AM_LITTLE_JESUS_ORQUESTA_%2838532535456%29.jpg');"><h4 class="artist-name">Little Jesus</h4><span class="artist-role" data-i18n="roles.drumTech">Drum Tech</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/ruzzi.jpg');"><h4 class="artist-name">Ruzzi</h4><span class="artist-role" data-i18n="roles.stageManager">Stage Manager</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Polyphia_-_Manchester%2C_UK_-_6_February_2019.jpg/960px-Polyphia_-_Manchester%2C_UK_-_6_February_2019.jpg');"><h4 class="artist-name">Polyphia</h4><span class="artist-role" data-i18n="roles.stageHand">Stage Hand</span></div>
+                        <div class="artist-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Anthrax_Rockavaria_2016_%2812_von_12%29.jpg/960px-Anthrax_Rockavaria_2016_%2812_von_12%29.jpg');"><h4 class="artist-name">Anthrax</h4><span class="artist-role" data-i18n="roles.stageHand">Stage Hand</span></div>
+                        <div class="artist-card" style="background-image: url('./assets/ligasmenor.jpg');"><h4 class="artist-name">Las Ligas Menores</h4><span class="artist-role" data-i18n="roles.monitorEngineer">Ing. Monitores</span></div>
                     </div>
                 </div>
             </div>
@@ -279,24 +305,24 @@
         <section id="gallery" class="py-20 md:py-32 bg-[#2a1a47]">
             <div class="container mx-auto px-6 fade-in-up">
                 <div class="text-center mb-12">
-                    <h2 class="section-title text-3xl md:text-4xl mb-4">GALERÍA</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto">En vivo, en estudio, en la carretera.</p>
+                    <h2 class="section-title text-3xl md:text-4xl mb-4" data-i18n="gallery.title">GALERÍA</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="gallery.body">En vivo, en estudio, en la carretera.</p>
                 </div>
                 <div class="grid grid-cols-2 lg:grid-cols-4 auto-rows-[250px] gap-4">
                     <div class="group relative overflow-hidden rounded-lg col-span-2 lg:col-span-2 lg:row-span-2">
-                        <img src="./assets/2.jpeg" alt="Francisco en el escenario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/2.jpeg" alt="Francisco en el escenario" data-i18n-alt="gallery.altStage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img src="./assets/3.jpeg" alt="Sesión de grabación" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/3.jpeg" alt="Sesión de grabación" data-i18n-alt="gallery.altSession" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img src="./assets/4.jpeg" alt="En vivo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/4.jpeg" alt="En vivo" data-i18n-alt="gallery.altLive" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg col-span-2 lg:col-span-1">
-                         <img src="./assets/1.jpeg" alt="Francisco Aburto" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                         <img src="./assets/1.jpeg" alt="Francisco Aburto" data-i18n-alt="gallery.altPortrait" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                     <div class="group relative overflow-hidden rounded-lg col-span-2 lg:col-span-1">
-                        <img src="./assets/5.jpeg" alt="En la batería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <img src="./assets/5.jpeg" alt="En la batería" data-i18n-alt="gallery.altDrums" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
                     </div>
                 </div>
             </div>
@@ -305,8 +331,8 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-32">
             <div class="container mx-auto px-6 text-center fade-in-up">
-                <h2 class="section-title text-3xl md:text-4xl mb-4">CONTACTO</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-10">¿Tienes una fecha, una sesión o un proyecto en puerta? Escríbeme.</p>
+                <h2 class="section-title text-3xl md:text-4xl mb-4" data-i18n="contact.title">CONTACTO</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-10" data-i18n="contact.body">¿Tienes una fecha, una sesión o un proyecto en puerta? Escríbeme.</p>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-lg">
                     <a href="mailto:sesiones@duckdrummer.com" class="hover:text-[#8a3ffc] transition">sesiones@duckdrummer.com</a>
                     <span class="hidden md:block text-gray-500">|</span>
@@ -327,7 +353,7 @@
     <!-- Footer -->
     <footer class="bg-black py-6">
         <div class="container mx-auto px-6 text-center text-gray-500">
-            <p>&copy; <span id="year"></span> Francisco Aburto. Todos los derechos reservados.</p>
+            <p>&copy; <span id="year"></span> <span data-i18n="footer.rights">Francisco Aburto. Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
