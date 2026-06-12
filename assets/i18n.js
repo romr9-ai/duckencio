@@ -60,7 +60,14 @@ const copy = {
         },
         contact: {
             title: 'CONTACTO',
-            body: '¿Tienes una fecha, una sesión o un proyecto en puerta? Escríbeme.'
+            body: '¿Tienes una fecha, una sesión o un proyecto en puerta? Escríbeme.',
+            email: 'Email',
+            whatsapp: 'WhatsApp',
+            instagram: 'Instagram',
+            emailLabel: 'Enviar correo a Francisco Aburto',
+            whatsappLabel: 'Enviar mensaje por WhatsApp',
+            instagramLabel: 'Abrir Instagram de Francisco Aburto',
+            whatsappHref: 'https://wa.me/526869457761?text=Hola%20Francisco%2C%20quiero%20preguntar%20por%20una%20fecha%20o%20sesi%C3%B3n.'
         },
         footer: {
             rights: 'Francisco Aburto. Todos los derechos reservados.'
@@ -123,7 +130,14 @@ const copy = {
         },
         contact: {
             title: 'CONTACT',
-            body: 'Got a date, a session, or a project coming up? Write me.'
+            body: 'Got a date, a session, or a project coming up? Write me.',
+            email: 'Email',
+            whatsapp: 'WhatsApp',
+            instagram: 'Instagram',
+            emailLabel: 'Send an email to Francisco Aburto',
+            whatsappLabel: 'Send a WhatsApp message',
+            instagramLabel: 'Open Francisco Aburto’s Instagram',
+            whatsappHref: 'https://wa.me/526869457761?text=Hi%20Francisco%2C%20I%E2%80%99d%20like%20to%20ask%20about%20a%20date%20or%20session.'
         },
         footer: {
             rights: 'Francisco Aburto. All rights reserved.'
@@ -177,6 +191,13 @@ const applyLanguage = (lang) => {
         const value = getNestedValue(activeCopy, element.dataset.i18nLabel);
         if (typeof value === 'string') {
             element.setAttribute('aria-label', value);
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-href]').forEach((element) => {
+        const value = getNestedValue(activeCopy, element.dataset.i18nHref);
+        if (typeof value === 'string') {
+            element.setAttribute('href', value);
         }
     });
 
