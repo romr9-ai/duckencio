@@ -14,7 +14,10 @@ const copy = {
             gallery: 'Galería',
             contact: 'Contacto',
             cta: 'Hablemos',
-            menuToggle: 'Abrir menu de navegacion'
+            menuToggle: 'Abrir menú de navegación',
+            languageSelector: 'Selector de idioma',
+            switchToSpanish: 'Cambiar a español',
+            switchToEnglish: 'Cambiar a inglés'
         },
         hero: {
             title: 'FRANCISCO ABURTO',
@@ -74,7 +77,10 @@ const copy = {
             gallery: 'Gallery',
             contact: 'Contact',
             cta: 'Let’s talk',
-            menuToggle: 'Open navigation menu'
+            menuToggle: 'Open navigation menu',
+            languageSelector: 'Language selector',
+            switchToSpanish: 'Switch to Spanish',
+            switchToEnglish: 'Switch to English'
         },
         hero: {
             title: 'FRANCISCO ABURTO',
@@ -174,6 +180,13 @@ const applyLanguage = (lang) => {
         }
     });
 
+    document.querySelectorAll('[data-i18n-title]').forEach((element) => {
+        const value = getNestedValue(activeCopy, element.dataset.i18nTitle);
+        if (typeof value === 'string') {
+            element.setAttribute('title', value);
+        }
+    });
+
     document.querySelectorAll('[data-lang-option]').forEach((button) => {
         const isActive = button.dataset.langOption === activeLang;
         button.classList.toggle('bg-[#8a3ffc]', isActive);
@@ -195,6 +208,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             storeLang(nextLang);
             applyLanguage(nextLang);
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+            const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+
+            if (mobileMenu && mobileMenuToggle && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+
+                if (mobileMenuIconOpen && mobileMenuIconClose) {
+                    mobileMenuIconOpen.classList.remove('hidden');
+                    mobileMenuIconClose.classList.add('hidden');
+                }
+            }
         });
     });
 });
